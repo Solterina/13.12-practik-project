@@ -62,6 +62,7 @@
             Controls.Add(ListBox);
             Name = "ListFunder";
             Text = "Список, режим: просмотра";
+            Load += ListFunder_Load;
             ResumeLayout(false);
         }
 

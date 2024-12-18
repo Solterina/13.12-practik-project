@@ -49,6 +49,8 @@
             btnRegister.TabIndex = 14;
             btnRegister.Text = "Зарегистрировать сотрудника";
             btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Visible = false;
+            btnRegister.Click += btnRegister_Click;
             // 
             // txtawt
             // 
@@ -86,6 +88,7 @@
             btnLogin.TabIndex = 11;
             btnLogin.Text = "Войти";
             btnLogin.UseVisualStyleBackColor = true;
+            btnLogin.Click += btnLogin_Click;
             // 
             // txtPassword
             // 
@@ -130,17 +133,20 @@
             btnList.TabIndex = 15;
             btnList.Text = "Списки";
             btnList.UseVisualStyleBackColor = true;
+            btnList.Click += btnList_Click;
             // 
             // btnReductList
             // 
             btnReductList.Font = new Font("Microsoft YaHei", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            btnReductList.Location = new Point(568, 12);
+            btnReductList.Location = new Point(13, 12);
             btnReductList.Margin = new Padding(4, 3, 4, 3);
             btnReductList.Name = "btnReductList";
             btnReductList.Size = new Size(188, 48);
             btnReductList.TabIndex = 16;
             btnReductList.Text = "Редактировать списки";
             btnReductList.UseVisualStyleBackColor = true;
+            btnReductList.Visible = false;
+            btnReductList.Click += btnReductList_Click;
             // 
             // Authorization
             // 

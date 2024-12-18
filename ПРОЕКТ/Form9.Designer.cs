@@ -44,6 +44,7 @@
             btnListFunder.TabIndex = 58;
             btnListFunder.Text = "Cписок основных средств ";
             btnListFunder.UseVisualStyleBackColor = true;
+            btnListFunder.Click += btnListFunder_Click;
             // 
             // btnListName
             // 
@@ -54,6 +55,7 @@
             btnListName.TabIndex = 59;
             btnListName.Text = "Список материально ответственных лиц";
             btnListName.UseVisualStyleBackColor = true;
+            btnListName.Click += btnListName_Click;
             // 
             // btnListNameForm
             // 
@@ -64,6 +66,7 @@
             btnListNameForm.TabIndex = 60;
             btnListNameForm.Text = "Cписок категорий основных средств";
             btnListNameForm.UseVisualStyleBackColor = true;
+            btnListNameForm.Click += btnListNameForm_Click;
             // 
             // btnListLog
             // 
@@ -74,6 +77,7 @@
             btnListLog.TabIndex = 61;
             btnListLog.Text = "журнал учета состояния основных средств";
             btnListLog.UseVisualStyleBackColor = true;
+            btnListLog.Click += btnListLog_Click;
             // 
             // label1
             // 
