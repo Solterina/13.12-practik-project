@@ -38,39 +38,47 @@
             btnRedact = new Button();
             btnDelete = new Button();
             label1 = new Label();
-            listBox = new ListBox();
             txtCategur = new TextBox();
             lblCategur = new Label();
+            listBox = new DataGridView();
+            Id = new DataGridViewTextBoxColumn();
+            FirstName = new DataGridViewTextBoxColumn();
+            LastName = new DataGridViewTextBoxColumn();
+            Post = new DataGridViewTextBoxColumn();
+            Category = new DataGridViewTextBoxColumn();
+            dataGridView1 = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // txtTitle
             // 
             txtTitle.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtTitle.ForeColor = SystemColors.MenuText;
-            txtTitle.Location = new Point(479, 240);
+            txtTitle.Location = new Point(678, 172);
             txtTitle.Margin = new Padding(4, 3, 4, 3);
             txtTitle.Name = "txtTitle";
-            txtTitle.Size = new Size(273, 35);
+            txtTitle.Size = new Size(275, 35);
             txtTitle.TabIndex = 76;
             // 
             // txtSurName
             // 
             txtSurName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtSurName.ForeColor = SystemColors.MenuText;
-            txtSurName.Location = new Point(479, 167);
+            txtSurName.Location = new Point(678, 99);
             txtSurName.Margin = new Padding(4, 3, 4, 3);
             txtSurName.Name = "txtSurName";
-            txtSurName.Size = new Size(273, 35);
+            txtSurName.Size = new Size(275, 35);
             txtSurName.TabIndex = 75;
             // 
             // txtName
             // 
             txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtName.ForeColor = SystemColors.MenuText;
-            txtName.Location = new Point(479, 99);
+            txtName.Location = new Point(678, 31);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
-            txtName.Size = new Size(273, 35);
+            txtName.Size = new Size(275, 35);
             txtName.TabIndex = 74;
             // 
             // lblTitle
@@ -79,7 +87,7 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(479, 216);
+            lblTitle.Location = new Point(678, 148);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(100, 21);
             lblTitle.TabIndex = 73;
@@ -91,7 +99,7 @@
             lblSurName.BackColor = Color.Transparent;
             lblSurName.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblSurName.ForeColor = Color.White;
-            lblSurName.Location = new Point(479, 143);
+            lblSurName.Location = new Point(678, 75);
             lblSurName.Name = "lblSurName";
             lblSurName.Size = new Size(73, 21);
             lblSurName.TabIndex = 72;
@@ -103,7 +111,7 @@
             lblName.BackColor = Color.Transparent;
             lblName.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(479, 75);
+            lblName.Location = new Point(678, 7);
             lblName.Name = "lblName";
             lblName.Size = new Size(37, 21);
             lblName.TabIndex = 71;
@@ -112,9 +120,9 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnAdd.Location = new Point(459, 470);
+            btnAdd.Location = new Point(556, 470);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(151, 48);
+            btnAdd.Size = new Size(135, 48);
             btnAdd.TabIndex = 70;
             btnAdd.Text = "Добавить";
             btnAdd.UseVisualStyleBackColor = true;
@@ -123,9 +131,9 @@
             // btnRedact
             // 
             btnRedact.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnRedact.Location = new Point(639, 470);
+            btnRedact.Location = new Point(694, 470);
             btnRedact.Name = "btnRedact";
-            btnRedact.Size = new Size(151, 48);
+            btnRedact.Size = new Size(139, 48);
             btnRedact.TabIndex = 69;
             btnRedact.Text = "Редактировать";
             btnRedact.UseVisualStyleBackColor = true;
@@ -134,9 +142,9 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnDelete.Location = new Point(819, 470);
+            btnDelete.Location = new Point(838, 470);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(151, 48);
+            btnDelete.Size = new Size(135, 48);
             btnDelete.TabIndex = 68;
             btnDelete.Text = "Удалить";
             btnDelete.UseVisualStyleBackColor = true;
@@ -153,22 +161,14 @@
             label1.TabIndex = 67;
             label1.Text = "Список материально ответственных лиц";
             // 
-            // listBox
-            // 
-            listBox.FormattingEnabled = true;
-            listBox.Location = new Point(17, 76);
-            listBox.Name = "listBox";
-            listBox.Size = new Size(422, 454);
-            listBox.TabIndex = 66;
-            // 
             // txtCategur
             // 
             txtCategur.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtCategur.ForeColor = SystemColors.MenuText;
-            txtCategur.Location = new Point(479, 314);
+            txtCategur.Location = new Point(678, 246);
             txtCategur.Margin = new Padding(4, 3, 4, 3);
             txtCategur.Name = "txtCategur";
-            txtCategur.Size = new Size(273, 35);
+            txtCategur.Size = new Size(275, 35);
             txtCategur.TabIndex = 78;
             // 
             // lblCategur
@@ -177,11 +177,56 @@
             lblCategur.BackColor = Color.Transparent;
             lblCategur.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblCategur.ForeColor = Color.White;
-            lblCategur.Location = new Point(479, 290);
+            lblCategur.Location = new Point(678, 222);
             lblCategur.Name = "lblCategur";
             lblCategur.Size = new Size(91, 21);
             lblCategur.TabIndex = 77;
             lblCategur.Text = "Категория";
+            // 
+            // listBox
+            // 
+            listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Columns.AddRange(new DataGridViewColumn[] { Id, FirstName, LastName, Post, Category });
+            listBox.Location = new Point(7, 75);
+            listBox.Name = "listBox";
+            listBox.Size = new Size(544, 459);
+            listBox.TabIndex = 79;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            // 
+            // FirstName
+            // 
+            FirstName.HeaderText = "First Name";
+            FirstName.Name = "FirstName";
+            // 
+            // LastName
+            // 
+            LastName.HeaderText = "Last Name";
+            LastName.Name = "LastName";
+            // 
+            // Post
+            // 
+            Post.HeaderText = "Post";
+            Post.Name = "Post";
+            // 
+            // Category
+            // 
+            Category.HeaderText = "Category";
+            Category.Name = "Category";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(625, 272);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.Size = new Size(240, 150);
+            dataGridView1.TabIndex = 80;
             // 
             // AdminNameForm
             // 
@@ -190,6 +235,8 @@
             BackColor = SystemColors.ButtonShadow;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
             ClientSize = new Size(977, 557);
+            Controls.Add(dataGridView1);
+            Controls.Add(listBox);
             Controls.Add(txtCategur);
             Controls.Add(lblCategur);
             Controls.Add(txtTitle);
@@ -202,10 +249,11 @@
             Controls.Add(btnRedact);
             Controls.Add(btnDelete);
             Controls.Add(label1);
-            Controls.Add(listBox);
             Name = "AdminNameForm";
             Text = "Список, режим: админ";
             Load += AdminNameForm_Load;
+            ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -222,8 +270,14 @@
         private Button btnRedact;
         private Button btnDelete;
         private Label label1;
-        private ListBox listBox;
         private TextBox txtCategur;
         private Label lblCategur;
+        private DataGridView listBox;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn FirstName;
+        private DataGridViewTextBoxColumn LastName;
+        private DataGridViewTextBoxColumn Post;
+        private DataGridViewTextBoxColumn Category;
+        private DataGridView dataGridView1;
     }
 }
