@@ -15,5 +15,6 @@ public partial class ListNameForm : Form
     {
         db.ResponsePersoms.Load();
         listBox.DataSource = db.ResponsePersoms.Local.ToBindingList();
+        listBox.Refresh();
     }
 }

@@ -1,5 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ПРОЕКТ;
 
@@ -16,6 +24,7 @@ public partial class AdminFunder : Form
     {
         db.FixedAssets.Load();
         listBox.DataSource = db.FixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnAdd_Click(object sender, EventArgs e)

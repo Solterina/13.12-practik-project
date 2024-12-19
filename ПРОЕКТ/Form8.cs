@@ -16,6 +16,7 @@ public partial class AdminLog : Form
     {
         db.StateFixedAssets.Load();
         listBox.DataSource = db.StateFixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnAdd_Click(object sender, EventArgs e)

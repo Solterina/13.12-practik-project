@@ -15,5 +15,6 @@ public partial class ListLog : Form
     {
         db.StateFixedAssets.Load();
         listBox.DataSource = db.StateFixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 }

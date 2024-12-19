@@ -15,5 +15,6 @@ public partial class ListFunder : Form
     {
         db.FixedAssets.Load();
         listBox.DataSource = db.FixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 }

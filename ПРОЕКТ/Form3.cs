@@ -15,5 +15,6 @@ public partial class ListCategory : Form
     {
         db.Categories.Load();
         listBox.DataSource = db.Categories.Local.ToBindingList();
+        listBox.Refresh();
     }
 }

@@ -16,6 +16,7 @@ public partial class AdminNameForm : Form
     {
         db.ResponsePersoms.Load();
         listBox.DataSource = db.ResponsePersoms.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnAdd_Click(object sender, EventArgs e)

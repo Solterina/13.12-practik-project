@@ -28,9 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblList = new Label();
             listBox = new DataGridView();
+            stateFixedAssetBindingSource = new BindingSource(components);
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            fixedAssetIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            stateDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)stateFixedAssetBindingSource).BeginInit();
             SuspendLayout();
             // 
             // lblList
@@ -48,13 +55,48 @@
             // 
             listBox.AllowUserToAddRows = false;
             listBox.AllowUserToDeleteRows = false;
+            listBox.AutoGenerateColumns = false;
             listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, dateDataGridViewTextBoxColumn, fixedAssetIdDataGridViewTextBoxColumn, stateDataGridViewTextBoxColumn });
+            listBox.DataSource = stateFixedAssetBindingSource;
             listBox.Location = new Point(13, 47);
             listBox.Name = "listBox";
             listBox.ReadOnly = true;
             listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             listBox.Size = new Size(487, 471);
             listBox.TabIndex = 82;
+            // 
+            // stateFixedAssetBindingSource
+            // 
+            stateFixedAssetBindingSource.DataSource = typeof(StateFixedAsset);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            dateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fixedAssetIdDataGridViewTextBoxColumn
+            // 
+            fixedAssetIdDataGridViewTextBoxColumn.DataPropertyName = "FixedAssetId";
+            fixedAssetIdDataGridViewTextBoxColumn.HeaderText = "FixedAssetId";
+            fixedAssetIdDataGridViewTextBoxColumn.Name = "fixedAssetIdDataGridViewTextBoxColumn";
+            fixedAssetIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // stateDataGridViewTextBoxColumn
+            // 
+            stateDataGridViewTextBoxColumn.DataPropertyName = "State";
+            stateDataGridViewTextBoxColumn.HeaderText = "State";
+            stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            stateDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ListLog
             // 
@@ -69,11 +111,17 @@
             Text = "Список, режим: просмотра";
             Load += ListLog_Load;
             ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)stateFixedAssetBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private Label lblList;
         private DataGridView listBox;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn fixedAssetIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
+        private BindingSource stateFixedAssetBindingSource;
     }
 }

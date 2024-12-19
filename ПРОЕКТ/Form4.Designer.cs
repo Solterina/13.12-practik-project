@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblList = new Label();
             listBox = new DataGridView();
+            responsPersonBindingSource = new BindingSource(components);
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            postDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            categoryIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            firstNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)responsPersonBindingSource).BeginInit();
             SuspendLayout();
             // 
             // lblList
@@ -48,13 +56,55 @@
             // 
             listBox.AllowUserToAddRows = false;
             listBox.AllowUserToDeleteRows = false;
+            listBox.AutoGenerateColumns = false;
             listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, postDataGridViewTextBoxColumn, categoryIdDataGridViewTextBoxColumn, firstNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn });
+            listBox.DataSource = responsPersonBindingSource;
             listBox.Location = new Point(12, 47);
             listBox.Name = "listBox";
             listBox.ReadOnly = true;
             listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             listBox.Size = new Size(561, 471);
             listBox.TabIndex = 82;
+            // 
+            // responsPersonBindingSource
+            // 
+            responsPersonBindingSource.DataSource = typeof(ResponsPerson);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // postDataGridViewTextBoxColumn
+            // 
+            postDataGridViewTextBoxColumn.DataPropertyName = "Post";
+            postDataGridViewTextBoxColumn.HeaderText = "Post";
+            postDataGridViewTextBoxColumn.Name = "postDataGridViewTextBoxColumn";
+            postDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // categoryIdDataGridViewTextBoxColumn
+            // 
+            categoryIdDataGridViewTextBoxColumn.DataPropertyName = "CategoryId";
+            categoryIdDataGridViewTextBoxColumn.HeaderText = "CategoryId";
+            categoryIdDataGridViewTextBoxColumn.Name = "categoryIdDataGridViewTextBoxColumn";
+            categoryIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            lastNameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ListNameForm
             // 
@@ -69,11 +119,18 @@
             Text = "Список, режим: просмотра";
             Load += ListNameForm_Load;
             ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)responsPersonBindingSource).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private Label lblList;
         private DataGridView listBox;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn postDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn categoryIdDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private BindingSource responsPersonBindingSource;
     }
 }

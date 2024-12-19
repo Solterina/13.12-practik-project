@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lblList = new Label();
             listBox = new DataGridView();
+            categoryBindingSource = new BindingSource(components);
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)categoryBindingSource).BeginInit();
             SuspendLayout();
             // 
             // lblList
@@ -48,13 +53,34 @@
             // 
             listBox.AllowUserToAddRows = false;
             listBox.AllowUserToDeleteRows = false;
+            listBox.AutoGenerateColumns = false;
             listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn });
+            listBox.DataSource = categoryBindingSource;
             listBox.Location = new Point(3, 47);
             listBox.Name = "listBox";
             listBox.ReadOnly = true;
             listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             listBox.Size = new Size(487, 471);
             listBox.TabIndex = 82;
+            // 
+            // categoryBindingSource
+            // 
+            categoryBindingSource.DataSource = typeof(Category);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ListCategory
             // 
@@ -69,6 +95,7 @@
             Text = "Список, режим: просмотра";
             Load += ListCategory_Load;
             ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)categoryBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -76,5 +103,8 @@
 
         private Label lblList;
         private DataGridView listBox;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private BindingSource categoryBindingSource;
     }
 }
