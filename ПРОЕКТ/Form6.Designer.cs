@@ -34,7 +34,7 @@
             lblName = new Label();
             btnAdd = new Button();
             btnRedact = new Button();
-            button3 = new Button();
+            btnDel = new Button();
             label1 = new Label();
             listBox = new ListBox();
             lblSum = new Label();
@@ -107,17 +107,19 @@
             btnRedact.TabIndex = 69;
             btnRedact.Text = "Редактировать";
             btnRedact.UseVisualStyleBackColor = true;
+            btnRedact.Click += btnRedact_Click;
             // 
-            // button3
+            // btnDel
             // 
-            button3.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            button3.ForeColor = Color.Black;
-            button3.Location = new Point(819, 470);
-            button3.Name = "button3";
-            button3.Size = new Size(151, 48);
-            button3.TabIndex = 68;
-            button3.Text = "Удалить";
-            button3.UseVisualStyleBackColor = true;
+            btnDel.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
+            btnDel.ForeColor = Color.Black;
+            btnDel.Location = new Point(819, 470);
+            btnDel.Name = "btnDel";
+            btnDel.Size = new Size(151, 48);
+            btnDel.TabIndex = 68;
+            btnDel.Text = "Удалить";
+            btnDel.UseVisualStyleBackColor = true;
+            btnDel.Click += btnDel_Click;
             // 
             // label1
             // 
@@ -175,7 +177,7 @@
             Controls.Add(lblSum);
             Controls.Add(btnAdd);
             Controls.Add(btnRedact);
-            Controls.Add(button3);
+            Controls.Add(btnDel);
             Controls.Add(label1);
             Controls.Add(listBox);
             ForeColor = Color.White;
@@ -194,7 +196,7 @@
         private Label lblName;
         private Button btnAdd;
         private Button btnRedact;
-        private Button button3;
+        private Button btnDel;
         private Label label1;
         private ListBox listBox;
         private Label lblSum;

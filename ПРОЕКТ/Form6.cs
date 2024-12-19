@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -32,7 +33,9 @@ public partial class AdminFunder : Form
     {
         int sum;
         if (!int.TryParse(txtSum.Text, out sum)) return;
-        string name=txtName.Text;
+
+        string name = txtName.Text;
+
         int categoryId;
         if (!int.TryParse(txtCategur.Text, out categoryId)) return;
 
@@ -43,5 +46,44 @@ public partial class AdminFunder : Form
         db.SaveChanges();
 
         listBox.Items.Add($"{fixedAsset.Id}\t{fixedAsset.Name}\t{fixedAsset.Sum}\t{fixedAsset.CategoryId}");
+    }
+
+    private void btnRedact_Click(object sender, EventArgs e)
+    {
+        if (listBox.SelectedIndex < 1) return;
+
+        int sum;
+        if (!int.TryParse(txtSum.Text, out sum)) return;
+
+        string name = txtName.Text;
+
+        int categoryId;
+        if (!int.TryParse(txtCategur.Text, out categoryId)) return;
+
+        var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
+        var fixedAsset = db.FixedAssets.Where(x => x.Id == id).First();
+
+        fixedAsset.Sum = sum;
+        fixedAsset.CategoryId = categoryId;
+        fixedAsset.Name = name;
+
+        db.FixedAssets.Update(fixedAsset);
+
+        db.SaveChanges();
+
+        listBox.Items[listBox.SelectedIndex] = $"{fixedAsset.Id}\t{fixedAsset.Name}\t{fixedAsset.Sum}\t{fixedAsset.CategoryId}";
+    }
+
+    private void btnDel_Click(object sender, EventArgs e)
+    {
+        if (listBox.SelectedIndex < 1) return;
+
+        var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
+
+        db.FixedAssets.Remove(db.FixedAssets.Where(x => x.Id == id).First());
+
+        db.SaveChanges();
+
+        listBox.Items.Remove(listBox.SelectedItem);
     }
 }
