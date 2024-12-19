@@ -74,7 +74,7 @@ public partial class AdminFunder : Form
         listBox.Items[listBox.SelectedIndex] = $"{fixedAsset.Id}\t{fixedAsset.Name}\t{fixedAsset.Sum}\t{fixedAsset.CategoryId}";
     }
 
-    private void btnDel_Click(object sender, EventArgs e)
+    private void btnDelete_Click(object sender, EventArgs e)
     {
         if (listBox.SelectedIndex < 1) return;
 

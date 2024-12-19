@@ -34,7 +34,7 @@
             lblName = new Label();
             btnAdd = new Button();
             btnRedact = new Button();
-            btnDel = new Button();
+            btnDelete = new Button();
             label1 = new Label();
             listBox = new ListBox();
             lblSum = new Label();
@@ -109,17 +109,17 @@
             btnRedact.UseVisualStyleBackColor = true;
             btnRedact.Click += btnRedact_Click;
             // 
-            // btnDel
+            // btnDelete
             // 
-            btnDel.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnDel.ForeColor = Color.Black;
-            btnDel.Location = new Point(819, 470);
-            btnDel.Name = "btnDel";
-            btnDel.Size = new Size(151, 48);
-            btnDel.TabIndex = 68;
-            btnDel.Text = "Удалить";
-            btnDel.UseVisualStyleBackColor = true;
-            btnDel.Click += btnDel_Click;
+            btnDelete.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
+            btnDelete.ForeColor = Color.Black;
+            btnDelete.Location = new Point(819, 470);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(151, 48);
+            btnDelete.TabIndex = 68;
+            btnDelete.Text = "Удалить";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // label1
             // 
@@ -177,7 +177,7 @@
             Controls.Add(lblSum);
             Controls.Add(btnAdd);
             Controls.Add(btnRedact);
-            Controls.Add(btnDel);
+            Controls.Add(btnDelete);
             Controls.Add(label1);
             Controls.Add(listBox);
             ForeColor = Color.White;
@@ -196,7 +196,7 @@
         private Label lblName;
         private Button btnAdd;
         private Button btnRedact;
-        private Button btnDel;
+        private Button btnDelete;
         private Label label1;
         private ListBox listBox;
         private Label lblSum;

@@ -118,6 +118,7 @@
             btnAdd.TabIndex = 70;
             btnAdd.Text = "Добавить";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnRedact
             // 
@@ -128,6 +129,7 @@
             btnRedact.TabIndex = 69;
             btnRedact.Text = "Редактировать";
             btnRedact.UseVisualStyleBackColor = true;
+            btnRedact.Click += btnRedact_Click;
             // 
             // btnDelete
             // 
@@ -138,6 +140,7 @@
             btnDelete.TabIndex = 68;
             btnDelete.Text = "Удалить";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // label1
             // 
