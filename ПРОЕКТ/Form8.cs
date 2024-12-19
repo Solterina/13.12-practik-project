@@ -22,10 +22,10 @@ public partial class AdminLog : Form
 
     private void AdminLog_Load(object sender, EventArgs e)
     {
-        listBox.Items.Add("Id\tDate\tState\tFixedAssetId");
+        listBox.Items.Add("Id\tDate\t\tState\tFixedAssetId");
         foreach (var i in db.StateFixedAssets)
         {
-            listBox.Items.Add($"{i.Id}\t{i.Date.Day}.{i.Date.Month}.{i.Date.Year}\t{i.State}\t{i.FixedAssetId}");
+            listBox.Items.Add($"{i.Id}\t{i.Date.Day}.{i.Date.Month}.{i.Date.Year}\t\t{i.State}\t{i.FixedAssetId}");
         }
     }
 
@@ -44,7 +44,7 @@ public partial class AdminLog : Form
 
         db.SaveChanges();
 
-        listBox.Items.Add($"{stateFixedAsset.Id}\t{stateFixedAsset.Date.Day}.{stateFixedAsset.Date.Month}.{stateFixedAsset.Date.Year}\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}");
+        listBox.Items.Add($"{stateFixedAsset.Id}\t{stateFixedAsset.Date.Day}.{stateFixedAsset.Date.Month}.{stateFixedAsset.Date.Year}\t\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}");
     }
 
     private void btnRedact_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ public partial class AdminLog : Form
 
         db.SaveChanges();
 
-        listBox.Items[listBox.SelectedIndex] = $"{stateFixedAsset.Id}\t{stateFixedAsset.Date.Day}.{stateFixedAsset.Date.Month}.{stateFixedAsset.Date.Year}\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}";
+        listBox.Items[listBox.SelectedIndex] = $"{stateFixedAsset.Id}\t{stateFixedAsset.Date.Day}.{stateFixedAsset.Date.Month}.{stateFixedAsset.Date.Year}\t\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}";
     }
 
     private void btnDelete_Click(object sender, EventArgs e)

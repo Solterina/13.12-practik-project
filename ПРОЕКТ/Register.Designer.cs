@@ -35,7 +35,7 @@
             lblSurname = new Label();
             txtSurname = new TextBox();
             label1 = new Label();
-            textBox2 = new TextBox();
+            txtName = new TextBox();
             lblEmail = new Label();
             txtEmail = new TextBox();
             txtLogin = new TextBox();
@@ -129,15 +129,15 @@
             label1.TabIndex = 16;
             label1.Text = "Имя";
             // 
-            // textBox2
+            // txtName
             // 
-            textBox2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox2.ForeColor = SystemColors.MenuText;
-            textBox2.Location = new Point(88, 258);
-            textBox2.Margin = new Padding(4, 3, 4, 3);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(318, 35);
-            textBox2.TabIndex = 15;
+            txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            txtName.ForeColor = SystemColors.MenuText;
+            txtName.Location = new Point(88, 258);
+            txtName.Margin = new Padding(4, 3, 4, 3);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(318, 35);
+            txtName.TabIndex = 15;
             // 
             // lblEmail
             // 
@@ -235,7 +235,7 @@
             Controls.Add(txtPassword);
             Controls.Add(lblLogin);
             Controls.Add(label1);
-            Controls.Add(textBox2);
+            Controls.Add(txtName);
             Controls.Add(txtSurname);
             Controls.Add(btnRegister);
             Controls.Add(txtawt);
@@ -257,7 +257,7 @@
         private Label lblSurname;
         private TextBox txtSurname;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtName;
         private Label lblEmail;
         private TextBox txtEmail;
         private TextBox txtLogin;
