@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             lblWorcer = new Label();
-            ListBox = new ListBox();
+            listBox = new ListBox();
             SuspendLayout();
             // 
             // lblWorcer
@@ -43,13 +43,13 @@
             lblWorcer.TabIndex = 8;
             lblWorcer.Text = "Список сотрудников";
             // 
-            // ListBox
+            // listBox
             // 
-            ListBox.FormattingEnabled = true;
-            ListBox.Location = new Point(21, 60);
-            ListBox.Name = "ListBox";
-            ListBox.Size = new Size(463, 454);
-            ListBox.TabIndex = 7;
+            listBox.FormattingEnabled = true;
+            listBox.Location = new Point(21, 60);
+            listBox.Name = "listBox";
+            listBox.Size = new Size(463, 454);
+            listBox.TabIndex = 7;
             // 
             // ListWorcer
             // 
@@ -58,15 +58,16 @@
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
             ClientSize = new Size(504, 530);
             Controls.Add(lblWorcer);
-            Controls.Add(ListBox);
+            Controls.Add(listBox);
             Name = "ListWorcer";
             Text = "Просмотр работников";
+            Load += ListWorcer_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label lblWorcer;
-        private ListBox ListBox;
+        private ListBox listBox;
     }
 }
