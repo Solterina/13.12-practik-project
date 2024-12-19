@@ -15,10 +15,7 @@ public class FixedAsset
 
     public int Sum { get; set; }
 
-    [ForeignKey("Category")]
     public int CategoryId { get; set; }
-
-    public Category Category { get; set; }
 
     [MaxLength(100)]
     public string Name { get; set; }

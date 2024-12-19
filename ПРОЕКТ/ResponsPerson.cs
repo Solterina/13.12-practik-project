@@ -15,10 +15,7 @@ public class ResponsPerson
 
     public string Post { get; set; }
 
-    [ForeignKey("Category")]
     public int CategoryId { get; set; }
-
-    public Category Category { get; set; }
 
     [MaxLength(50)]
     public string FirstName { get; set; }

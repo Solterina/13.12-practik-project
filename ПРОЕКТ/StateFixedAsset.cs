@@ -17,10 +17,7 @@ public class StateFixedAsset
 
     public DateTime Date { get; set; }
 
-    [ForeignKey("FixedAsset")]
     public int FixedAssetId { get; set; }
-   
-    public FixedAsset FixedAsset {  get; set; }
 
     [MaxLength(30)]
     public string State { get; set; }
