@@ -78,7 +78,7 @@ public partial class AdminLog : Form
 
         db.SaveChanges();
 
-        listBox.Items[listBox.SelectedIndex] = $"{stateFixedAsset.Id}\t{stateFixedAsset.Date}\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}";
+        listBox.Items[listBox.SelectedIndex] = $"{stateFixedAsset.Id}\t{stateFixedAsset.Date.Day}.{stateFixedAsset.Date.Month}.{stateFixedAsset.Date.Year}\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}";
     }
 
     private void btnDelete_Click(object sender, EventArgs e)
