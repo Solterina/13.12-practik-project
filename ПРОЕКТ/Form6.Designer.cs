@@ -46,7 +46,7 @@
             // 
             txtCategur.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtCategur.ForeColor = SystemColors.MenuText;
-            txtCategur.Location = new Point(544, 222);
+            txtCategur.Location = new Point(628, 228);
             txtCategur.Margin = new Padding(4, 3, 4, 3);
             txtCategur.Name = "txtCategur";
             txtCategur.Size = new Size(273, 35);
@@ -56,7 +56,7 @@
             // 
             txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtName.ForeColor = SystemColors.MenuText;
-            txtName.Location = new Point(544, 149);
+            txtName.Location = new Point(628, 155);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
             txtName.Size = new Size(273, 35);
@@ -68,7 +68,7 @@
             lblCategur.BackColor = Color.Transparent;
             lblCategur.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblCategur.ForeColor = Color.White;
-            lblCategur.Location = new Point(544, 198);
+            lblCategur.Location = new Point(628, 204);
             lblCategur.Name = "lblCategur";
             lblCategur.Size = new Size(91, 21);
             lblCategur.TabIndex = 73;
@@ -80,7 +80,7 @@
             lblName.BackColor = Color.Transparent;
             lblName.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(544, 125);
+            lblName.Location = new Point(628, 131);
             lblName.Name = "lblName";
             lblName.Size = new Size(82, 21);
             lblName.TabIndex = 72;
@@ -90,7 +90,7 @@
             // 
             btnAdd.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             btnAdd.ForeColor = Color.Black;
-            btnAdd.Location = new Point(524, 452);
+            btnAdd.Location = new Point(514, 480);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(151, 48);
             btnAdd.TabIndex = 70;
@@ -102,7 +102,7 @@
             // 
             btnRedact.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             btnRedact.ForeColor = Color.Black;
-            btnRedact.Location = new Point(704, 452);
+            btnRedact.Location = new Point(694, 480);
             btnRedact.Name = "btnRedact";
             btnRedact.Size = new Size(151, 48);
             btnRedact.TabIndex = 69;
@@ -114,7 +114,7 @@
             // 
             btnDelete.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             btnDelete.ForeColor = Color.Black;
-            btnDelete.Location = new Point(884, 452);
+            btnDelete.Location = new Point(874, 480);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(151, 48);
             btnDelete.TabIndex = 68;
@@ -127,7 +127,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Tai Le", 15.75F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(7, 26);
+            label1.Location = new Point(89, 14);
             label1.Name = "label1";
             label1.Size = new Size(516, 40);
             label1.TabIndex = 67;
@@ -139,7 +139,7 @@
             lblSum.BackColor = Color.Transparent;
             lblSum.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblSum.ForeColor = Color.White;
-            lblSum.Location = new Point(544, 57);
+            lblSum.Location = new Point(628, 63);
             lblSum.Name = "lblSum";
             lblSum.Size = new Size(55, 21);
             lblSum.TabIndex = 71;
@@ -149,7 +149,7 @@
             // 
             txtSum.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtSum.ForeColor = SystemColors.MenuText;
-            txtSum.Location = new Point(544, 81);
+            txtSum.Location = new Point(628, 87);
             txtSum.Margin = new Padding(4, 3, 4, 3);
             txtSum.Name = "txtSum";
             txtSum.Size = new Size(273, 35);
@@ -173,7 +173,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
-            ClientSize = new Size(1047, 557);
+            ClientSize = new Size(1047, 541);
             Controls.Add(listBox);
             Controls.Add(txtCategur);
             Controls.Add(txtName);
