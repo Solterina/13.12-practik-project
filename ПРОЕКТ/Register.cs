@@ -15,6 +15,7 @@ namespace ПРОЕКТ
         {
             db.Users.Load();
             listBox.DataSource = db.Users.Local.ToBindingList();
+            listBox.Refresh();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
