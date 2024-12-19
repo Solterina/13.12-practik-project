@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,7 +15,10 @@ public class FixedAsset
 
     public int Sum { get; set; }
 
+    [ForeignKey("Category")]
     public int CategoryId { get; set; }
+
+    public Category Category { get; set; }
 
     [MaxLength(100)]
     public string Name { get; set; }

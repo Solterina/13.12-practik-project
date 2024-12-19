@@ -11,7 +11,7 @@ public class UserDbContext : DbContext
     public DbSet<StateFixedAsset> StateFixedAssets { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("Server=localhost;Port=3306;Database=poject;User=root;Password=;", new MySqlServerVersion(new Version(8, 0, 22)));
+        => optionsBuilder.UseMySql("Server=localhost;Port=3306;Database=project;User=root;Password=;", new MySqlServerVersion(new Version(8, 0, 22)));
 
     public UserDbContext()
     {
