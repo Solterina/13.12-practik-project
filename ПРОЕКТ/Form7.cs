@@ -69,6 +69,6 @@ public partial class ListCategoryForm : Form
 
         db.SaveChanges();
 
-        listBox.Items.Remove(listBox.SelectedItem);
+        listBox.Items.RemoveAt(listBox.SelectedIndex);
     }
 }

@@ -16,5 +16,15 @@ namespace ПРОЕКТ
         {
             InitializeComponent();
         }
+
+        private void btnSpisokWorcer_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

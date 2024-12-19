@@ -55,6 +55,7 @@
             btnRegister.TabIndex = 13;
             btnRegister.Text = "Зарегистрировать";
             btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Click += btnRegister_Click;
             // 
             // txtawt
             // 
@@ -217,6 +218,7 @@
             btnSpisokWorcer.TabIndex = 23;
             btnSpisokWorcer.Text = "Список сотрудников";
             btnSpisokWorcer.UseVisualStyleBackColor = true;
+            btnSpisokWorcer.Click += btnSpisokWorcer_Click;
             // 
             // Register
             // 

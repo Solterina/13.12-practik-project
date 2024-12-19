@@ -84,6 +84,6 @@ public partial class AdminNameForm : Form
 
         db.SaveChanges();
 
-        listBox.Items.Remove(listBox.SelectedItem);
+        listBox.Items.RemoveAt(listBox.SelectedIndex);
     }
 }
