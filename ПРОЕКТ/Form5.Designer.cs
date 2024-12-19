@@ -62,6 +62,7 @@
             Controls.Add(listBox);
             Name = "ListLog";
             Text = "Список, режим: просмотра";
+            Load += ListLog_Load;
             ResumeLayout(false);
         }
 

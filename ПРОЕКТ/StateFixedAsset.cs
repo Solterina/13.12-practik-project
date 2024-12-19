@@ -21,10 +21,10 @@ public class StateFixedAsset
     [MaxLength(30)]
     public string State { get; set; }
 
-    public StateFixedAsset(DateTime date, int ixedAssetId, string state)
+    public StateFixedAsset(DateTime date, int fixedAssetId, string state)
     {
         Date = date;
-        FixedAssetId = ixedAssetId;
+        FixedAssetId = fixedAssetId;
         State = state;
     }
 

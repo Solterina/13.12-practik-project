@@ -6,7 +6,7 @@ public partial class Authorization : Form
     public Authorization()
     {
         InitializeComponent();
-        //db = new UserDbContext();
+        db = new UserDbContext();
     }
 
     private void btnLogin_Click(object sender, EventArgs e)
@@ -25,10 +25,10 @@ public partial class Authorization : Form
             btnReductList.Visible = true;
             btnRegister.Visible = true;
         }
-        //else if (db.users.Any(user => user.Username == login && user.Password == password))
-        //{
-        //    btnReductList.Visible = true;
-        //}
+        else if (db.Users.Any(user => user.Username == login && user.Password == password))
+        {
+            btnReductList.Visible = true;
+        }
         else
         {
             btnReductList.Visible = false;

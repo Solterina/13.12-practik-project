@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListBox = new ListBox();
+            listBox = new ListBox();
             lblNameList = new Label();
             SuspendLayout();
             // 
-            // ListBox
+            // listBox
             // 
-            ListBox.FormattingEnabled = true;
-            ListBox.Location = new Point(23, 61);
-            ListBox.Name = "ListBox";
-            ListBox.Size = new Size(463, 454);
-            ListBox.TabIndex = 5;
+            listBox.FormattingEnabled = true;
+            listBox.Location = new Point(23, 61);
+            listBox.Name = "listBox";
+            listBox.Size = new Size(463, 454);
+            listBox.TabIndex = 5;
             // 
             // lblNameList
             // 
@@ -59,7 +59,7 @@
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
             ClientSize = new Size(504, 530);
             Controls.Add(lblNameList);
-            Controls.Add(ListBox);
+            Controls.Add(listBox);
             Name = "ListFunder";
             Text = "Список, режим: просмотра";
             Load += ListFunder_Load;
@@ -67,7 +67,7 @@
         }
 
         #endregion
-        private ListBox ListBox;
+        private ListBox listBox;
         private Label lblNameList;
     }
 }

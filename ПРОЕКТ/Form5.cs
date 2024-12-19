@@ -8,13 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ПРОЕКТ
+namespace ПРОЕКТ;
+
+public partial class ListLog : Form
 {
-    public partial class ListLog : Form
+    UserDbContext db;
+    public ListLog()
     {
-        public ListLog()
+        InitializeComponent();
+        db = new UserDbContext();
+    }
+
+    private void ListLog_Load(object sender, EventArgs e)
+    {
+        listBox.Items.Add("Id\tDate\tState\tFixedAssetId");
+        foreach (var i in db.StateFixedAssets)
         {
-            InitializeComponent();
+            listBox.Items.Add($"{i.Id}\t{i.Date}\t{i.State}\t{i.FixedAssetId}");
         }
     }
 }

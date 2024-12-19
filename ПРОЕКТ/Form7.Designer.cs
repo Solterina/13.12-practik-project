@@ -124,6 +124,7 @@
             Controls.Add(listBox);
             Name = "ListCategoryForm";
             Text = "Список, режим: админ";
+            Load += ListCategoryForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

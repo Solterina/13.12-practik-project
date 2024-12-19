@@ -202,6 +202,7 @@
             Controls.Add(listBox);
             Name = "AdminNameForm";
             Text = "Список, режим: админ";
+            Load += AdminNameForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
