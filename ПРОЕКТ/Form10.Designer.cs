@@ -38,7 +38,7 @@
             btnRedact = new Button();
             btnDelete = new Button();
             label1 = new Label();
-            listBox1 = new ListBox();
+            listBox = new ListBox();
             txtCategur = new TextBox();
             lblCategur = new Label();
             SuspendLayout();
@@ -150,13 +150,13 @@
             label1.TabIndex = 67;
             label1.Text = "Список материально ответственных лиц";
             // 
-            // listBox1
+            // listBox
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(17, 76);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(422, 454);
-            listBox1.TabIndex = 66;
+            listBox.FormattingEnabled = true;
+            listBox.Location = new Point(17, 76);
+            listBox.Name = "listBox";
+            listBox.Size = new Size(422, 454);
+            listBox.TabIndex = 66;
             // 
             // txtCategur
             // 
@@ -199,9 +199,10 @@
             Controls.Add(btnRedact);
             Controls.Add(btnDelete);
             Controls.Add(label1);
-            Controls.Add(listBox1);
+            Controls.Add(listBox);
             Name = "AdminNameForm";
             Text = "Список, режим: админ";
+            Load += AdminNameForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -218,7 +219,7 @@
         private Button btnRedact;
         private Button btnDelete;
         private Label label1;
-        private ListBox listBox1;
+        private ListBox listBox;
         private TextBox txtCategur;
         private Label lblCategur;
     }

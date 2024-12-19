@@ -95,6 +95,7 @@
             btnAdd.TabIndex = 70;
             btnAdd.Text = "Добавить";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // btnRedact
             // 
@@ -180,6 +181,7 @@
             ForeColor = Color.White;
             Name = "AdminFunder";
             Text = "Список, режим: админ";
+            Load += AdminFunder_Load;
             ResumeLayout(false);
             PerformLayout();
         }

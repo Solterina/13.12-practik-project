@@ -176,6 +176,7 @@
             Controls.Add(listBox);
             Name = "AdminLog";
             Text = "Список, режим: админ";
+            Load += AdminLog_Load;
             ResumeLayout(false);
             PerformLayout();
         }
