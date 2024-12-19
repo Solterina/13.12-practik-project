@@ -25,16 +25,7 @@ public partial class AdminLog : Form
         listBox.Items.Add("Id\tDate\tState\tFixedAssetId");
         foreach (var i in db.StateFixedAssets)
         {
-            listBox.Items.Add($"{i.Id}\t{i.Date}\t{i.State}\t{i.FixedAssetId}");
-        }
-    }
-
-    private void AdminFunder_Load(object sender, EventArgs e)
-    {
-        listBox.Items.Add("Id\tName\tSum\tCategoryId");
-        foreach (var i in db.FixedAssets)
-        {
-            listBox.Items.Add($"{i.Id}\t{i.Name}\t{i.Sum}\t{i.CategoryId}");
+            listBox.Items.Add($"{i.Id}\t{i.Date.Day}.{i.Date.Month}.{i.Date.Year}\t{i.State}\t{i.FixedAssetId}");
         }
     }
 
@@ -53,7 +44,7 @@ public partial class AdminLog : Form
 
         db.SaveChanges();
 
-        listBox.Items.Add($"{stateFixedAsset.Id}\t{stateFixedAsset.Date}\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}");
+        listBox.Items.Add($"{stateFixedAsset.Id}\t{stateFixedAsset.Date.Day}.{stateFixedAsset.Date.Month}.{stateFixedAsset.Date.Year}\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}");
     }
 
     private void btnRedact_Click(object sender, EventArgs e)
