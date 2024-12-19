@@ -21,9 +21,9 @@ namespace ПРОЕКТ
 
         private void btnSpisokWorcer_Click(object sender, EventArgs e)
         {
-            var listFunder = new ListFunder();
+            var listWorcer = new ListWorcer();
 
-            listFunder.Show();
+            listWorcer.Show();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)

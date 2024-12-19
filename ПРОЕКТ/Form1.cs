@@ -28,6 +28,7 @@ public partial class Authorization : Form
         else if (db.Users.Any(user => user.Username == login && user.Password == password))
         {
             btnReductList.Visible = true;
+            btnRegister.Visible = false;
         }
         else
         {
