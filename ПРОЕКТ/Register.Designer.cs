@@ -192,7 +192,7 @@
             lblLogin.BackColor = Color.Transparent;
             lblLogin.Font = new Font("Microsoft Tai Le", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLogin.ForeColor = SystemColors.ButtonHighlight;
-            lblLogin.Location = new Point(987, 269);
+            lblLogin.Location = new Point(993, 278);
             lblLogin.Margin = new Padding(4, 0, 4, 0);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(77, 27);
@@ -208,7 +208,7 @@
             listBox.Name = "listBox";
             listBox.ReadOnly = true;
             listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            listBox.Size = new Size(866, 530);
+            listBox.Size = new Size(866, 541);
             listBox.TabIndex = 82;
             // 
             // btnAdd

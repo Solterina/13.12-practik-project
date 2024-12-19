@@ -48,7 +48,7 @@
             // 
             txtTitle.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtTitle.ForeColor = SystemColors.MenuText;
-            txtTitle.Location = new Point(678, 172);
+            txtTitle.Location = new Point(675, 230);
             txtTitle.Margin = new Padding(4, 3, 4, 3);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(275, 35);
@@ -58,7 +58,7 @@
             // 
             txtSurName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtSurName.ForeColor = SystemColors.MenuText;
-            txtSurName.Location = new Point(678, 99);
+            txtSurName.Location = new Point(675, 157);
             txtSurName.Margin = new Padding(4, 3, 4, 3);
             txtSurName.Name = "txtSurName";
             txtSurName.Size = new Size(275, 35);
@@ -68,7 +68,7 @@
             // 
             txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtName.ForeColor = SystemColors.MenuText;
-            txtName.Location = new Point(678, 31);
+            txtName.Location = new Point(675, 89);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
             txtName.Size = new Size(275, 35);
@@ -80,7 +80,7 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(678, 148);
+            lblTitle.Location = new Point(675, 206);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(100, 21);
             lblTitle.TabIndex = 73;
@@ -92,7 +92,7 @@
             lblSurName.BackColor = Color.Transparent;
             lblSurName.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblSurName.ForeColor = Color.White;
-            lblSurName.Location = new Point(678, 75);
+            lblSurName.Location = new Point(675, 133);
             lblSurName.Name = "lblSurName";
             lblSurName.Size = new Size(73, 21);
             lblSurName.TabIndex = 72;
@@ -104,7 +104,7 @@
             lblName.BackColor = Color.Transparent;
             lblName.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(678, 7);
+            lblName.Location = new Point(675, 65);
             lblName.Name = "lblName";
             lblName.Size = new Size(37, 21);
             lblName.TabIndex = 71;
@@ -113,7 +113,7 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnAdd.Location = new Point(556, 470);
+            btnAdd.Location = new Point(556, 497);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(135, 48);
             btnAdd.TabIndex = 70;
@@ -124,7 +124,7 @@
             // btnRedact
             // 
             btnRedact.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnRedact.Location = new Point(694, 470);
+            btnRedact.Location = new Point(732, 497);
             btnRedact.Name = "btnRedact";
             btnRedact.Size = new Size(139, 48);
             btnRedact.TabIndex = 69;
@@ -135,7 +135,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnDelete.Location = new Point(838, 470);
+            btnDelete.Location = new Point(907, 497);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(135, 48);
             btnDelete.TabIndex = 68;
@@ -158,7 +158,7 @@
             // 
             txtCategur.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtCategur.ForeColor = SystemColors.MenuText;
-            txtCategur.Location = new Point(678, 246);
+            txtCategur.Location = new Point(675, 304);
             txtCategur.Margin = new Padding(4, 3, 4, 3);
             txtCategur.Name = "txtCategur";
             txtCategur.Size = new Size(275, 35);
@@ -170,7 +170,7 @@
             lblCategur.BackColor = Color.Transparent;
             lblCategur.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblCategur.ForeColor = Color.White;
-            lblCategur.Location = new Point(678, 222);
+            lblCategur.Location = new Point(675, 280);
             lblCategur.Name = "lblCategur";
             lblCategur.Size = new Size(91, 21);
             lblCategur.TabIndex = 77;
@@ -194,7 +194,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
-            ClientSize = new Size(977, 557);
+            ClientSize = new Size(1054, 557);
             Controls.Add(listBox);
             Controls.Add(txtCategur);
             Controls.Add(lblCategur);

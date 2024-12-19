@@ -38,7 +38,7 @@
             lblList.BackColor = Color.Transparent;
             lblList.Font = new Font("Microsoft Tai Le", 15.75F, FontStyle.Bold);
             lblList.ForeColor = Color.White;
-            lblList.Location = new Point(18, 18);
+            lblList.Location = new Point(44, 9);
             lblList.Name = "lblList";
             lblList.Size = new Size(494, 40);
             lblList.TabIndex = 18;

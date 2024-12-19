@@ -46,7 +46,7 @@
             // 
             txtMeans.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtMeans.ForeColor = SystemColors.MenuText;
-            txtMeans.Location = new Point(527, 175);
+            txtMeans.Location = new Point(631, 170);
             txtMeans.Margin = new Padding(4, 3, 4, 3);
             txtMeans.Name = "txtMeans";
             txtMeans.Size = new Size(273, 35);
@@ -56,7 +56,7 @@
             // 
             txtDate.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtDate.ForeColor = SystemColors.MenuText;
-            txtDate.Location = new Point(527, 92);
+            txtDate.Location = new Point(631, 87);
             txtDate.Margin = new Padding(4, 3, 4, 3);
             txtDate.Name = "txtDate";
             txtDate.Size = new Size(273, 35);
@@ -68,7 +68,7 @@
             lblMeans.BackColor = Color.Transparent;
             lblMeans.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblMeans.ForeColor = Color.White;
-            lblMeans.Location = new Point(527, 151);
+            lblMeans.Location = new Point(631, 146);
             lblMeans.Name = "lblMeans";
             lblMeans.Size = new Size(82, 21);
             lblMeans.TabIndex = 62;
@@ -80,7 +80,7 @@
             lblDate.BackColor = Color.Transparent;
             lblDate.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblDate.ForeColor = Color.White;
-            lblDate.Location = new Point(527, 68);
+            lblDate.Location = new Point(631, 63);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(46, 21);
             lblDate.TabIndex = 60;
@@ -89,7 +89,7 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnAdd.Location = new Point(507, 463);
+            btnAdd.Location = new Point(506, 487);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(151, 48);
             btnAdd.TabIndex = 59;
@@ -100,7 +100,7 @@
             // btnRedact
             // 
             btnRedact.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnRedact.Location = new Point(687, 463);
+            btnRedact.Location = new Point(686, 487);
             btnRedact.Name = "btnRedact";
             btnRedact.Size = new Size(151, 48);
             btnRedact.TabIndex = 58;
@@ -111,7 +111,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnDelete.Location = new Point(867, 463);
+            btnDelete.Location = new Point(866, 487);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(151, 48);
             btnDelete.TabIndex = 57;
@@ -124,7 +124,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Tai Le", 15.75F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(2, 21);
+            label1.Location = new Point(6, 21);
             label1.Name = "label1";
             label1.Size = new Size(516, 40);
             label1.TabIndex = 56;
@@ -134,7 +134,7 @@
             // 
             txtState.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtState.ForeColor = SystemColors.MenuText;
-            txtState.Location = new Point(527, 248);
+            txtState.Location = new Point(631, 243);
             txtState.Margin = new Padding(4, 3, 4, 3);
             txtState.Name = "txtState";
             txtState.Size = new Size(273, 35);
@@ -146,7 +146,7 @@
             lblState.BackColor = Color.Transparent;
             lblState.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblState.ForeColor = Color.White;
-            lblState.Location = new Point(527, 224);
+            lblState.Location = new Point(631, 219);
             lblState.Name = "lblState";
             lblState.Size = new Size(91, 21);
             lblState.TabIndex = 66;

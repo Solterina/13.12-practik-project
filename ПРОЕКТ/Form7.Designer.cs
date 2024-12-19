@@ -42,7 +42,7 @@
             // 
             txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtName.ForeColor = Color.Black;
-            txtName.Location = new Point(550, 85);
+            txtName.Location = new Point(671, 80);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
             txtName.Size = new Size(273, 35);
@@ -54,7 +54,7 @@
             lblName.BackColor = Color.Transparent;
             lblName.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(550, 61);
+            lblName.Location = new Point(671, 56);
             lblName.Name = "lblName";
             lblName.Size = new Size(82, 21);
             lblName.TabIndex = 72;
@@ -63,7 +63,7 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnAdd.Location = new Point(533, 456);
+            btnAdd.Location = new Point(534, 480);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(151, 48);
             btnAdd.TabIndex = 70;
@@ -74,7 +74,7 @@
             // btnRedact
             // 
             btnRedact.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnRedact.Location = new Point(713, 456);
+            btnRedact.Location = new Point(714, 480);
             btnRedact.Name = "btnRedact";
             btnRedact.Size = new Size(151, 48);
             btnRedact.TabIndex = 69;
@@ -85,7 +85,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnDelete.Location = new Point(893, 456);
+            btnDelete.Location = new Point(894, 480);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(151, 48);
             btnDelete.TabIndex = 68;
@@ -98,7 +98,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Microsoft Tai Le", 15.75F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(7, 26);
+            label1.Location = new Point(37, 9);
             label1.Name = "label1";
             label1.Size = new Size(516, 40);
             label1.TabIndex = 67;
@@ -122,7 +122,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
-            ClientSize = new Size(1085, 557);
+            ClientSize = new Size(1085, 541);
             Controls.Add(listBox);
             Controls.Add(txtName);
             Controls.Add(lblName);
