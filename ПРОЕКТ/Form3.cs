@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +22,7 @@ public partial class ListCategory : Form
 
     private void ListCategory_Load(object sender, EventArgs e)
     {
-        listBox.Items.Add("Id\tName\t");
-        foreach (var i in db.Categories)
-        {
-            listBox.Items.Add($"{i.Id}\t{i.Name}");
-        }
+        db.Categories.Load();
+        listBox.DataSource = db.Categories.Local.ToBindingList();
     }
 }

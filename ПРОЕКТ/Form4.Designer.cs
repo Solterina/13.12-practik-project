@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox = new ListBox();
             lblList = new Label();
+            listBox = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
             SuspendLayout();
-            // 
-            // listBox
-            // 
-            listBox.FormattingEnabled = true;
-            listBox.Location = new Point(18, 61);
-            listBox.Name = "listBox";
-            listBox.Size = new Size(463, 454);
-            listBox.TabIndex = 17;
             // 
             // lblList
             // 
@@ -51,24 +44,36 @@
             lblList.TabIndex = 18;
             lblList.Text = "Список материально ответственных лиц";
             // 
+            // listBox
+            // 
+            listBox.AllowUserToAddRows = false;
+            listBox.AllowUserToDeleteRows = false;
+            listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Location = new Point(12, 47);
+            listBox.Name = "listBox";
+            listBox.ReadOnly = true;
+            listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listBox.Size = new Size(561, 471);
+            listBox.TabIndex = 82;
+            // 
             // ListNameForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
-            ClientSize = new Size(505, 530);
-            Controls.Add(lblList);
+            ClientSize = new Size(585, 530);
             Controls.Add(listBox);
+            Controls.Add(lblList);
             Name = "ListNameForm";
             Text = "Список, режим: просмотра";
             Load += ListNameForm_Load;
+            ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ListBox listBox;
         private Label lblList;
+        private DataGridView listBox;
     }
 }

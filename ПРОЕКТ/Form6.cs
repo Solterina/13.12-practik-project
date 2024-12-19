@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,11 +23,8 @@ public partial class AdminFunder : Form
 
     private void AdminFunder_Load(object sender, EventArgs e)
     {
-        listBox.Items.Add("Id\tName\tSum\tCategoryId");
-        foreach (var i in db.FixedAssets)
-        {
-            listBox.Items.Add($"{i.Id}\t{i.Name}\t{i.Sum}\t{i.CategoryId}");
-        }
+        db.FixedAssets.Load();
+        listBox.DataSource = db.FixedAssets.Local.ToBindingList();
     }
 
     private void btnAdd_Click(object sender, EventArgs e)
@@ -45,13 +43,13 @@ public partial class AdminFunder : Form
 
         db.SaveChanges();
 
-        listBox.Items.Add($"{fixedAsset.Id}\t{fixedAsset.Name}\t{fixedAsset.Sum}\t{fixedAsset.CategoryId}");
+        db.FixedAssets.Load();
+        listBox.DataSource = db.FixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnRedact_Click(object sender, EventArgs e)
     {
-        if (listBox.SelectedIndex < 1) return;
-
         int sum;
         if (!int.TryParse(txtSum.Text, out sum)) return;
 
@@ -60,7 +58,10 @@ public partial class AdminFunder : Form
         int categoryId;
         if (!int.TryParse(txtCategur.Text, out categoryId)) return;
 
-        var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
+        if (listBox.SelectedRows.Count == 0) return;
+
+        int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
+
         var fixedAsset = db.FixedAssets.Where(x => x.Id == id).First();
 
         fixedAsset.Sum = sum;
@@ -71,19 +72,23 @@ public partial class AdminFunder : Form
 
         db.SaveChanges();
 
-        listBox.Items[listBox.SelectedIndex] = $"{fixedAsset.Id}\t{fixedAsset.Name}\t{fixedAsset.Sum}\t{fixedAsset.CategoryId}";
+        db.FixedAssets.Load();
+        listBox.DataSource = db.FixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnDelete_Click(object sender, EventArgs e)
     {
-        if (listBox.SelectedIndex < 1) return;
+        if (listBox.SelectedRows.Count == 0) return;
 
-        var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
+        int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 
         db.FixedAssets.Remove(db.FixedAssets.Where(x => x.Id == id).First());
 
         db.SaveChanges();
 
-        listBox.Items.RemoveAt(listBox.SelectedIndex);
+        db.FixedAssets.Load();
+        listBox.DataSource = db.FixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 }

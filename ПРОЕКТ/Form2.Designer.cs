@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox = new ListBox();
             lblNameList = new Label();
+            listBox = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
             SuspendLayout();
-            // 
-            // listBox
-            // 
-            listBox.FormattingEnabled = true;
-            listBox.Location = new Point(23, 61);
-            listBox.Name = "listBox";
-            listBox.Size = new Size(463, 454);
-            listBox.TabIndex = 5;
             // 
             // lblNameList
             // 
@@ -51,6 +44,18 @@
             lblNameList.TabIndex = 6;
             lblNameList.Text = "Список основных средств";
             // 
+            // listBox
+            // 
+            listBox.AllowUserToAddRows = false;
+            listBox.AllowUserToDeleteRows = false;
+            listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Location = new Point(5, 47);
+            listBox.Name = "listBox";
+            listBox.ReadOnly = true;
+            listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listBox.Size = new Size(487, 471);
+            listBox.TabIndex = 82;
+            // 
             // ListFunder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -58,16 +63,17 @@
             BackColor = SystemColors.ButtonShadow;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
             ClientSize = new Size(504, 530);
-            Controls.Add(lblNameList);
             Controls.Add(listBox);
+            Controls.Add(lblNameList);
             Name = "ListFunder";
             Text = "Список, режим: просмотра";
             Load += ListFunder_Load;
+            ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private ListBox listBox;
         private Label lblNameList;
+        private DataGridView listBox;
     }
 }

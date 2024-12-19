@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,12 +22,8 @@ public partial class AdminNameForm : Form
 
     private void AdminNameForm_Load(object sender, EventArgs e)
     {
-        dataGridView1.DataSource = db.Users.Local.ToBindingList();
-        //listBox.Items.Add("Id\tirstName\tLastName\tPost\tCategoryId");
-        //foreach (var i in db.ResponsePersoms)
-        //{
-        //    listBox.Items.Add($"{i.Id}\t{i.FirstName}\t{i.LastName}\t{i.Post}\t{i.CategoryId}");
-        //}
+        db.ResponsePersoms.Load();
+        listBox.DataSource = db.ResponsePersoms.Local.ToBindingList();
     }
 
     private void btnAdd_Click(object sender, EventArgs e)
@@ -46,7 +43,9 @@ public partial class AdminNameForm : Form
 
         db.SaveChanges();
 
-        //listBox.Items.Add($"{responsPerson.Id}\t{responsPerson.FirstName}\t{responsPerson.LastName}\t{responsPerson.Post}\t{responsPerson.CategoryId}");
+        db.ResponsePersoms.Load();
+        listBox.DataSource = db.ResponsePersoms.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnRedact_Click(object sender, EventArgs e)
@@ -60,31 +59,38 @@ public partial class AdminNameForm : Form
         int categoryId;
         if (!int.TryParse(txtCategur.Text, out categoryId)) return;
 
-        //var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
-        //var responsPerson = db.ResponsePersoms.Where(x => x.Id == id).First();
+        if (listBox.SelectedRows.Count == 0) return;
 
-        //responsPerson.FirstName = firstName;
-        //responsPerson.LastName = lastName;
-        //responsPerson.Post = post;
-        //responsPerson.CategoryId = categoryId;
+        int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 
-        //db.ResponsePersoms.Update(responsPerson);
+        var responsPerson = db.ResponsePersoms.Where(x => x.Id == id).First();
+
+        responsPerson.FirstName = firstName;
+        responsPerson.LastName = lastName;
+        responsPerson.Post = post;
+        responsPerson.CategoryId = categoryId;
+
+        db.ResponsePersoms.Update(responsPerson);
 
         db.SaveChanges();
 
-        //listBox.Items[listBox.SelectedIndex] = $"{responsPerson.Id}\t{responsPerson.FirstName}\t{responsPerson.LastName}\t{responsPerson.Post}\t{responsPerson.CategoryId}";
+        db.ResponsePersoms.Load();
+        listBox.DataSource = db.ResponsePersoms.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnDelete_Click(object sender, EventArgs e)
     {
-        //if (listBox.SelectedIndex < 1) return;
+        if (listBox.SelectedRows.Count == 0) return;
 
-        //var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
+        int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 
         db.ResponsePersoms.Remove(db.ResponsePersoms.Where(x => x.Id == id).First());
 
         db.SaveChanges();
 
-        //listBox.Items.RemoveAt(listBox.SelectedIndex);
+        db.ResponsePersoms.Load();
+        listBox.DataSource = db.ResponsePersoms.Local.ToBindingList();
+        listBox.Refresh();
     }
 }

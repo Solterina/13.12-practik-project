@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,11 +22,8 @@ public partial class ListCategoryForm : Form
 
     private void ListCategoryForm_Load(object sender, EventArgs e)
     {
-        listBox.Items.Add("Id\tName\t");
-        foreach (var i in db.Categories)
-        {
-            listBox.Items.Add($"{i.Id}\t{i.Name}");
-        }
+        db.Categories.Load();
+        listBox.DataSource = db.Categories.Local.ToBindingList();
     }
 
     private void btnAdd_Click(object sender, EventArgs e)
@@ -38,16 +36,19 @@ public partial class ListCategoryForm : Form
 
         db.SaveChanges();
 
-        listBox.Items.Add($"{category.Id}\t{category.Name}");
+        db.Categories.Load();
+        listBox.DataSource = db.Categories.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnRedact_Click(object sender, EventArgs e)
     {
-        if (listBox.SelectedIndex < 1) return;
-
         string name = txtName.Text;
 
-        var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
+        if (listBox.SelectedRows.Count == 0) return;
+
+        int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
+
         var category = db.Categories.Where(x => x.Id == id).First();
 
         category.Name = name;
@@ -56,19 +57,23 @@ public partial class ListCategoryForm : Form
 
         db.SaveChanges();
 
-        listBox.Items[listBox.SelectedIndex] = $"{category.Id}\t{category.Name}";
+        db.Categories.Load();
+        listBox.DataSource = db.Categories.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnDelete_Click(object sender, EventArgs e)
     {
-        if (listBox.SelectedIndex < 1) return;
+        if (listBox.SelectedRows.Count == 0) return;
 
-        var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
+        int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 
         db.Categories.Remove(db.Categories.Where(x => x.Id == id).First());
 
         db.SaveChanges();
 
-        listBox.Items.RemoveAt(listBox.SelectedIndex);
+        db.Categories.Load();
+        listBox.DataSource = db.Categories.Local.ToBindingList();
+        listBox.Refresh();
     }
 }

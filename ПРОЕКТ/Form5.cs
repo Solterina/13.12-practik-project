@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +22,7 @@ public partial class ListLog : Form
 
     private void ListLog_Load(object sender, EventArgs e)
     {
-        listBox.Items.Add("Id\tDate\tState\tFixedAssetId");
-        foreach (var i in db.StateFixedAssets)
-        {
-            listBox.Items.Add($"{i.Id}\t{i.Date}\t{i.State}\t{i.FixedAssetId}");
-        }
+        db.StateFixedAssets.Load();
+        listBox.DataSource = db.StateFixedAssets.Local.ToBindingList();
     }
 }

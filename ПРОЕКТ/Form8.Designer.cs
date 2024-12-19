@@ -36,16 +36,17 @@
             btnRedact = new Button();
             btnDelete = new Button();
             label1 = new Label();
-            listBox = new ListBox();
             txtState = new TextBox();
             lblState = new Label();
+            listBox = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
             SuspendLayout();
             // 
             // txtMeans
             // 
             txtMeans.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtMeans.ForeColor = SystemColors.MenuText;
-            txtMeans.Location = new Point(474, 177);
+            txtMeans.Location = new Point(527, 175);
             txtMeans.Margin = new Padding(4, 3, 4, 3);
             txtMeans.Name = "txtMeans";
             txtMeans.Size = new Size(273, 35);
@@ -55,7 +56,7 @@
             // 
             txtDate.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtDate.ForeColor = SystemColors.MenuText;
-            txtDate.Location = new Point(474, 94);
+            txtDate.Location = new Point(527, 92);
             txtDate.Margin = new Padding(4, 3, 4, 3);
             txtDate.Name = "txtDate";
             txtDate.Size = new Size(273, 35);
@@ -67,7 +68,7 @@
             lblMeans.BackColor = Color.Transparent;
             lblMeans.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblMeans.ForeColor = Color.White;
-            lblMeans.Location = new Point(474, 153);
+            lblMeans.Location = new Point(527, 151);
             lblMeans.Name = "lblMeans";
             lblMeans.Size = new Size(82, 21);
             lblMeans.TabIndex = 62;
@@ -79,7 +80,7 @@
             lblDate.BackColor = Color.Transparent;
             lblDate.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblDate.ForeColor = Color.White;
-            lblDate.Location = new Point(474, 70);
+            lblDate.Location = new Point(527, 68);
             lblDate.Name = "lblDate";
             lblDate.Size = new Size(46, 21);
             lblDate.TabIndex = 60;
@@ -88,7 +89,7 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnAdd.Location = new Point(454, 465);
+            btnAdd.Location = new Point(507, 463);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(151, 48);
             btnAdd.TabIndex = 59;
@@ -99,7 +100,7 @@
             // btnRedact
             // 
             btnRedact.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnRedact.Location = new Point(634, 465);
+            btnRedact.Location = new Point(687, 463);
             btnRedact.Name = "btnRedact";
             btnRedact.Size = new Size(151, 48);
             btnRedact.TabIndex = 58;
@@ -110,7 +111,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnDelete.Location = new Point(814, 465);
+            btnDelete.Location = new Point(867, 463);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(151, 48);
             btnDelete.TabIndex = 57;
@@ -129,19 +130,11 @@
             label1.TabIndex = 56;
             label1.Text = "Журнал учета состояния основных средств";
             // 
-            // listBox
-            // 
-            listBox.FormattingEnabled = true;
-            listBox.Location = new Point(12, 71);
-            listBox.Name = "listBox";
-            listBox.Size = new Size(422, 454);
-            listBox.TabIndex = 55;
-            // 
             // txtState
             // 
             txtState.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtState.ForeColor = SystemColors.MenuText;
-            txtState.Location = new Point(474, 250);
+            txtState.Location = new Point(527, 248);
             txtState.Margin = new Padding(4, 3, 4, 3);
             txtState.Name = "txtState";
             txtState.Size = new Size(273, 35);
@@ -153,11 +146,23 @@
             lblState.BackColor = Color.Transparent;
             lblState.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblState.ForeColor = Color.White;
-            lblState.Location = new Point(474, 226);
+            lblState.Location = new Point(527, 224);
             lblState.Name = "lblState";
             lblState.Size = new Size(91, 21);
             lblState.TabIndex = 66;
             lblState.Text = "Состояние";
+            // 
+            // listBox
+            // 
+            listBox.AllowUserToAddRows = false;
+            listBox.AllowUserToDeleteRows = false;
+            listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Location = new Point(12, 64);
+            listBox.Name = "listBox";
+            listBox.ReadOnly = true;
+            listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listBox.Size = new Size(487, 471);
+            listBox.TabIndex = 82;
             // 
             // AdminLog
             // 
@@ -165,7 +170,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
-            ClientSize = new Size(977, 557);
+            ClientSize = new Size(1025, 557);
+            Controls.Add(listBox);
             Controls.Add(txtState);
             Controls.Add(lblState);
             Controls.Add(txtMeans);
@@ -176,10 +182,10 @@
             Controls.Add(btnRedact);
             Controls.Add(btnDelete);
             Controls.Add(label1);
-            Controls.Add(listBox);
             Name = "AdminLog";
             Text = "Список, режим: админ";
             Load += AdminLog_Load;
+            ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -194,8 +200,8 @@
         private Button btnRedact;
         private Button btnDelete;
         private Label label1;
-        private ListBox listBox;
         private TextBox txtState;
         private Label lblState;
+        private DataGridView listBox;
     }
 }

@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             lblList = new Label();
-            listBox = new ListBox();
+            listBox = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
             SuspendLayout();
             // 
             // lblList
@@ -45,11 +46,15 @@
             // 
             // listBox
             // 
-            listBox.FormattingEnabled = true;
-            listBox.Location = new Point(22, 63);
+            listBox.AllowUserToAddRows = false;
+            listBox.AllowUserToDeleteRows = false;
+            listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Location = new Point(3, 47);
             listBox.Name = "listBox";
-            listBox.Size = new Size(463, 454);
-            listBox.TabIndex = 11;
+            listBox.ReadOnly = true;
+            listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listBox.Size = new Size(487, 471);
+            listBox.TabIndex = 82;
             // 
             // ListCategory
             // 
@@ -58,17 +63,18 @@
             BackColor = SystemColors.ButtonShadow;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
             ClientSize = new Size(502, 530);
-            Controls.Add(lblList);
             Controls.Add(listBox);
+            Controls.Add(lblList);
             Name = "ListCategory";
             Text = "Список, режим: просмотра";
             Load += ListCategory_Load;
+            ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label lblList;
-        private ListBox listBox;
+        private DataGridView listBox;
     }
 }

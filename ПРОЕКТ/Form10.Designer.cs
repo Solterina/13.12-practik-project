@@ -41,14 +41,7 @@
             txtCategur = new TextBox();
             lblCategur = new Label();
             listBox = new DataGridView();
-            Id = new DataGridViewTextBoxColumn();
-            FirstName = new DataGridViewTextBoxColumn();
-            LastName = new DataGridViewTextBoxColumn();
-            Post = new DataGridViewTextBoxColumn();
-            Category = new DataGridViewTextBoxColumn();
-            dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // txtTitle
@@ -185,48 +178,15 @@
             // 
             // listBox
             // 
+            listBox.AllowUserToAddRows = false;
+            listBox.AllowUserToDeleteRows = false;
             listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            listBox.Columns.AddRange(new DataGridViewColumn[] { Id, FirstName, LastName, Post, Category });
-            listBox.Location = new Point(7, 75);
+            listBox.Location = new Point(7, 57);
             listBox.Name = "listBox";
-            listBox.Size = new Size(544, 459);
-            listBox.TabIndex = 79;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            // 
-            // FirstName
-            // 
-            FirstName.HeaderText = "First Name";
-            FirstName.Name = "FirstName";
-            // 
-            // LastName
-            // 
-            LastName.HeaderText = "Last Name";
-            LastName.Name = "LastName";
-            // 
-            // Post
-            // 
-            Post.HeaderText = "Post";
-            Post.Name = "Post";
-            // 
-            // Category
-            // 
-            Category.HeaderText = "Category";
-            Category.Name = "Category";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(625, 272);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(240, 150);
-            dataGridView1.TabIndex = 80;
+            listBox.ReadOnly = true;
+            listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listBox.Size = new Size(543, 488);
+            listBox.TabIndex = 80;
             // 
             // AdminNameForm
             // 
@@ -235,7 +195,6 @@
             BackColor = SystemColors.ButtonShadow;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
             ClientSize = new Size(977, 557);
-            Controls.Add(dataGridView1);
             Controls.Add(listBox);
             Controls.Add(txtCategur);
             Controls.Add(lblCategur);
@@ -253,7 +212,6 @@
             Text = "Список, режим: админ";
             Load += AdminNameForm_Load;
             ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -273,11 +231,5 @@
         private TextBox txtCategur;
         private Label lblCategur;
         private DataGridView listBox;
-        private DataGridViewTextBoxColumn Id;
-        private DataGridViewTextBoxColumn FirstName;
-        private DataGridViewTextBoxColumn LastName;
-        private DataGridViewTextBoxColumn Post;
-        private DataGridViewTextBoxColumn Category;
-        private DataGridView dataGridView1;
     }
 }

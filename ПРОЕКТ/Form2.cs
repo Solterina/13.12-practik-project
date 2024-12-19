@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +22,7 @@ public partial class ListFunder : Form
 
     private void ListFunder_Load(object sender, EventArgs e)
     {
-        listBox.Items.Add("Id\tName\tSum\tCategoryId");
-        foreach (var i in db.FixedAssets)
-        {
-            listBox.Items.Add($"{i.Id}\t{i.Name}\t{i.Sum}\t{i.CategoryId}");
-        }
+        db.FixedAssets.Load();
+        listBox.DataSource = db.FixedAssets.Local.ToBindingList();
     }
 }

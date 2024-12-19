@@ -36,16 +36,17 @@
             btnRedact = new Button();
             btnDelete = new Button();
             label1 = new Label();
-            listBox = new ListBox();
             lblSum = new Label();
             txtSum = new TextBox();
+            listBox = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
             SuspendLayout();
             // 
             // txtCategur
             // 
             txtCategur.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtCategur.ForeColor = SystemColors.MenuText;
-            txtCategur.Location = new Point(479, 240);
+            txtCategur.Location = new Point(544, 222);
             txtCategur.Margin = new Padding(4, 3, 4, 3);
             txtCategur.Name = "txtCategur";
             txtCategur.Size = new Size(273, 35);
@@ -55,7 +56,7 @@
             // 
             txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtName.ForeColor = SystemColors.MenuText;
-            txtName.Location = new Point(479, 167);
+            txtName.Location = new Point(544, 149);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
             txtName.Size = new Size(273, 35);
@@ -67,7 +68,7 @@
             lblCategur.BackColor = Color.Transparent;
             lblCategur.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblCategur.ForeColor = Color.White;
-            lblCategur.Location = new Point(479, 216);
+            lblCategur.Location = new Point(544, 198);
             lblCategur.Name = "lblCategur";
             lblCategur.Size = new Size(91, 21);
             lblCategur.TabIndex = 73;
@@ -79,7 +80,7 @@
             lblName.BackColor = Color.Transparent;
             lblName.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(479, 143);
+            lblName.Location = new Point(544, 125);
             lblName.Name = "lblName";
             lblName.Size = new Size(82, 21);
             lblName.TabIndex = 72;
@@ -89,7 +90,7 @@
             // 
             btnAdd.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             btnAdd.ForeColor = Color.Black;
-            btnAdd.Location = new Point(459, 470);
+            btnAdd.Location = new Point(524, 452);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(151, 48);
             btnAdd.TabIndex = 70;
@@ -101,7 +102,7 @@
             // 
             btnRedact.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             btnRedact.ForeColor = Color.Black;
-            btnRedact.Location = new Point(639, 470);
+            btnRedact.Location = new Point(704, 452);
             btnRedact.Name = "btnRedact";
             btnRedact.Size = new Size(151, 48);
             btnRedact.TabIndex = 69;
@@ -113,7 +114,7 @@
             // 
             btnDelete.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             btnDelete.ForeColor = Color.Black;
-            btnDelete.Location = new Point(819, 470);
+            btnDelete.Location = new Point(884, 452);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(151, 48);
             btnDelete.TabIndex = 68;
@@ -132,21 +133,13 @@
             label1.TabIndex = 67;
             label1.Text = "Список основных средств";
             // 
-            // listBox
-            // 
-            listBox.FormattingEnabled = true;
-            listBox.Location = new Point(17, 76);
-            listBox.Name = "listBox";
-            listBox.Size = new Size(422, 454);
-            listBox.TabIndex = 66;
-            // 
             // lblSum
             // 
             lblSum.AutoSize = true;
             lblSum.BackColor = Color.Transparent;
             lblSum.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblSum.ForeColor = Color.White;
-            lblSum.Location = new Point(479, 75);
+            lblSum.Location = new Point(544, 57);
             lblSum.Name = "lblSum";
             lblSum.Size = new Size(55, 21);
             lblSum.TabIndex = 71;
@@ -156,11 +149,23 @@
             // 
             txtSum.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtSum.ForeColor = SystemColors.MenuText;
-            txtSum.Location = new Point(479, 99);
+            txtSum.Location = new Point(544, 81);
             txtSum.Margin = new Padding(4, 3, 4, 3);
             txtSum.Name = "txtSum";
             txtSum.Size = new Size(273, 35);
             txtSum.TabIndex = 74;
+            // 
+            // listBox
+            // 
+            listBox.AllowUserToAddRows = false;
+            listBox.AllowUserToDeleteRows = false;
+            listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Location = new Point(7, 57);
+            listBox.Name = "listBox";
+            listBox.ReadOnly = true;
+            listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listBox.Size = new Size(487, 471);
+            listBox.TabIndex = 82;
             // 
             // AdminFunder
             // 
@@ -168,7 +173,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
-            ClientSize = new Size(977, 557);
+            ClientSize = new Size(1047, 557);
+            Controls.Add(listBox);
             Controls.Add(txtCategur);
             Controls.Add(txtName);
             Controls.Add(txtSum);
@@ -179,11 +185,11 @@
             Controls.Add(btnRedact);
             Controls.Add(btnDelete);
             Controls.Add(label1);
-            Controls.Add(listBox);
             ForeColor = Color.White;
             Name = "AdminFunder";
             Text = "Список, режим: админ";
             Load += AdminFunder_Load;
+            ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -198,8 +204,8 @@
         private Button btnRedact;
         private Button btnDelete;
         private Label label1;
-        private ListBox listBox;
         private Label lblSum;
         private TextBox txtSum;
+        private DataGridView listBox;
     }
 }

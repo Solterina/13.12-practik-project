@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,11 +23,8 @@ public partial class AdminLog : Form
 
     private void AdminLog_Load(object sender, EventArgs e)
     {
-        listBox.Items.Add("Id\tDate\t\tState\tFixedAssetId");
-        foreach (var i in db.StateFixedAssets)
-        {
-            listBox.Items.Add($"{i.Id}\t{i.Date.Day}.{i.Date.Month}.{i.Date.Year}\t\t{i.State}\t{i.FixedAssetId}");
-        }
+        db.StateFixedAssets.Load();
+        listBox.DataSource = db.StateFixedAssets.Local.ToBindingList();
     }
 
     private void btnAdd_Click(object sender, EventArgs e)
@@ -44,13 +42,13 @@ public partial class AdminLog : Form
 
         db.SaveChanges();
 
-        listBox.Items.Add($"{stateFixedAsset.Id}\t{stateFixedAsset.Date.Day}.{stateFixedAsset.Date.Month}.{stateFixedAsset.Date.Year}\t\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}");
+        db.StateFixedAssets.Load();
+        listBox.DataSource = db.StateFixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnRedact_Click(object sender, EventArgs e)
     {
-        if (listBox.SelectedIndex < 1) return;
-
         DateTime date = DateTime.Parse(txtDate.Text);
 
         string state = txtState.Text;
@@ -58,7 +56,10 @@ public partial class AdminLog : Form
         int fixedAssetId;
         if (!int.TryParse(txtMeans.Text, out fixedAssetId)) return;
 
-        var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
+        if (listBox.SelectedRows.Count == 0) return;
+
+        int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
+
         var stateFixedAsset = db.StateFixedAssets.Where(x => x.Id == id).First();
 
         stateFixedAsset.State = state;
@@ -69,19 +70,23 @@ public partial class AdminLog : Form
 
         db.SaveChanges();
 
-        listBox.Items[listBox.SelectedIndex] = $"{stateFixedAsset.Id}\t{stateFixedAsset.Date.Day}.{stateFixedAsset.Date.Month}.{stateFixedAsset.Date.Year}\t\t{stateFixedAsset.State}\t{stateFixedAsset.FixedAssetId}";
+        db.StateFixedAssets.Load();
+        listBox.DataSource = db.StateFixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 
     private void btnDelete_Click(object sender, EventArgs e)
     {
-        if (listBox.SelectedIndex < 1) return;
+        if (listBox.SelectedRows.Count == 0) return;
 
-        var id = int.Parse(listBox.SelectedItem.ToString().Split("\t")[0]);
+        int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 
         db.StateFixedAssets.Remove(db.StateFixedAssets.Where(x => x.Id == id).First());
 
         db.SaveChanges();
 
-        listBox.Items.RemoveAt(listBox.SelectedIndex);
+        db.StateFixedAssets.Load();
+        listBox.DataSource = db.StateFixedAssets.Local.ToBindingList();
+        listBox.Refresh();
     }
 }

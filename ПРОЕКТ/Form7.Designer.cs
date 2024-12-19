@@ -34,14 +34,15 @@
             btnRedact = new Button();
             btnDelete = new Button();
             label1 = new Label();
-            listBox = new ListBox();
+            listBox = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)listBox).BeginInit();
             SuspendLayout();
             // 
             // txtName
             // 
             txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
             txtName.ForeColor = Color.Black;
-            txtName.Location = new Point(476, 99);
+            txtName.Location = new Point(550, 85);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
             txtName.Size = new Size(273, 35);
@@ -53,7 +54,7 @@
             lblName.BackColor = Color.Transparent;
             lblName.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
             lblName.ForeColor = Color.White;
-            lblName.Location = new Point(476, 75);
+            lblName.Location = new Point(550, 61);
             lblName.Name = "lblName";
             lblName.Size = new Size(82, 21);
             lblName.TabIndex = 72;
@@ -62,7 +63,7 @@
             // btnAdd
             // 
             btnAdd.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnAdd.Location = new Point(459, 470);
+            btnAdd.Location = new Point(533, 456);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(151, 48);
             btnAdd.TabIndex = 70;
@@ -73,7 +74,7 @@
             // btnRedact
             // 
             btnRedact.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnRedact.Location = new Point(639, 470);
+            btnRedact.Location = new Point(713, 456);
             btnRedact.Name = "btnRedact";
             btnRedact.Size = new Size(151, 48);
             btnRedact.TabIndex = 69;
@@ -84,7 +85,7 @@
             // btnDelete
             // 
             btnDelete.Font = new Font("Cascadia Code SemiBold", 12F, FontStyle.Bold);
-            btnDelete.Location = new Point(819, 470);
+            btnDelete.Location = new Point(893, 456);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(151, 48);
             btnDelete.TabIndex = 68;
@@ -105,11 +106,15 @@
             // 
             // listBox
             // 
-            listBox.FormattingEnabled = true;
-            listBox.Location = new Point(17, 76);
+            listBox.AllowUserToAddRows = false;
+            listBox.AllowUserToDeleteRows = false;
+            listBox.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            listBox.Location = new Point(12, 57);
             listBox.Name = "listBox";
-            listBox.Size = new Size(422, 454);
-            listBox.TabIndex = 66;
+            listBox.ReadOnly = true;
+            listBox.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            listBox.Size = new Size(487, 471);
+            listBox.TabIndex = 82;
             // 
             // ListCategoryForm
             // 
@@ -117,17 +122,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonShadow;
             BackgroundImage = Properties.Resources.photo_2024_12_18_14_40_46;
-            ClientSize = new Size(977, 557);
+            ClientSize = new Size(1085, 557);
+            Controls.Add(listBox);
             Controls.Add(txtName);
             Controls.Add(lblName);
             Controls.Add(btnAdd);
             Controls.Add(btnRedact);
             Controls.Add(btnDelete);
             Controls.Add(label1);
-            Controls.Add(listBox);
             Name = "ListCategoryForm";
             Text = "Список, режим: админ";
             Load += ListCategoryForm_Load;
+            ((System.ComponentModel.ISupportInitialize)listBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,6 +145,6 @@
         private Button btnRedact;
         private Button btnDelete;
         private Label label1;
-        private ListBox listBox;
+        private DataGridView listBox;
     }
 }
