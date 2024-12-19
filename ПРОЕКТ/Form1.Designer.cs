@@ -93,7 +93,7 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtPassword.ForeColor = SystemColors.ScrollBar;
+            txtPassword.ForeColor = SystemColors.MenuText;
             txtPassword.Location = new Point(332, 309);
             txtPassword.Margin = new Padding(4, 3, 4, 3);
             txtPassword.Name = "txtPassword";
@@ -103,7 +103,7 @@
             // txtLogin
             // 
             txtLogin.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtLogin.ForeColor = SystemColors.ScrollBar;
+            txtLogin.ForeColor = SystemColors.MenuText;
             txtLogin.Location = new Point(332, 218);
             txtLogin.Margin = new Padding(4, 3, 4, 3);
             txtLogin.Name = "txtLogin";

@@ -85,7 +85,7 @@
             // txtPhone
             // 
             txtPhone.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtPhone.ForeColor = SystemColors.ScrollBar;
+            txtPhone.ForeColor = SystemColors.MenuText;
             txtPhone.Location = new Point(90, 346);
             txtPhone.Margin = new Padding(4, 3, 4, 3);
             txtPhone.Name = "txtPhone";
@@ -108,7 +108,7 @@
             // txtSurname
             // 
             txtSurname.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtSurname.ForeColor = SystemColors.ScrollBar;
+            txtSurname.ForeColor = SystemColors.MenuText;
             txtSurname.Location = new Point(84, 174);
             txtSurname.Margin = new Padding(4, 3, 4, 3);
             txtSurname.Name = "txtSurname";
@@ -131,7 +131,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox2.ForeColor = SystemColors.ScrollBar;
+            textBox2.ForeColor = SystemColors.MenuText;
             textBox2.Location = new Point(88, 258);
             textBox2.Margin = new Padding(4, 3, 4, 3);
             textBox2.Name = "textBox2";
@@ -154,7 +154,7 @@
             // txtEmail
             // 
             txtEmail.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtEmail.ForeColor = SystemColors.ScrollBar;
+            txtEmail.ForeColor = SystemColors.MenuText;
             txtEmail.Location = new Point(538, 258);
             txtEmail.Margin = new Padding(4, 3, 4, 3);
             txtEmail.Name = "txtEmail";
@@ -164,7 +164,7 @@
             // txtLogin
             // 
             txtLogin.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtLogin.ForeColor = SystemColors.ScrollBar;
+            txtLogin.ForeColor = SystemColors.MenuText;
             txtLogin.Location = new Point(534, 174);
             txtLogin.Margin = new Padding(4, 3, 4, 3);
             txtLogin.Name = "txtLogin";
@@ -187,7 +187,7 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtPassword.ForeColor = SystemColors.ScrollBar;
+            txtPassword.ForeColor = SystemColors.MenuText;
             txtPassword.Location = new Point(540, 346);
             txtPassword.Margin = new Padding(4, 3, 4, 3);
             txtPassword.Name = "txtPassword";

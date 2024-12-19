@@ -38,7 +38,7 @@
             btnRedact = new Button();
             btnDelete = new Button();
             label1 = new Label();
-            listBox1 = new ListBox();
+            listBox = new ListBox();
             txtCategur = new TextBox();
             lblCategur = new Label();
             SuspendLayout();
@@ -46,7 +46,7 @@
             // txtTitle
             // 
             txtTitle.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtTitle.ForeColor = SystemColors.ScrollBar;
+            txtTitle.ForeColor = SystemColors.MenuText;
             txtTitle.Location = new Point(479, 240);
             txtTitle.Margin = new Padding(4, 3, 4, 3);
             txtTitle.Name = "txtTitle";
@@ -56,7 +56,7 @@
             // txtSurName
             // 
             txtSurName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtSurName.ForeColor = SystemColors.ScrollBar;
+            txtSurName.ForeColor = SystemColors.MenuText;
             txtSurName.Location = new Point(479, 167);
             txtSurName.Margin = new Padding(4, 3, 4, 3);
             txtSurName.Name = "txtSurName";
@@ -66,7 +66,7 @@
             // txtName
             // 
             txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtName.ForeColor = SystemColors.ScrollBar;
+            txtName.ForeColor = SystemColors.MenuText;
             txtName.Location = new Point(479, 99);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
@@ -150,18 +150,18 @@
             label1.TabIndex = 67;
             label1.Text = "Список материально ответственных лиц";
             // 
-            // listBox1
+            // listBox
             // 
-            listBox1.FormattingEnabled = true;
-            listBox1.Location = new Point(17, 76);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(422, 454);
-            listBox1.TabIndex = 66;
+            listBox.FormattingEnabled = true;
+            listBox.Location = new Point(17, 76);
+            listBox.Name = "listBox";
+            listBox.Size = new Size(422, 454);
+            listBox.TabIndex = 66;
             // 
             // txtCategur
             // 
             txtCategur.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtCategur.ForeColor = SystemColors.ScrollBar;
+            txtCategur.ForeColor = SystemColors.MenuText;
             txtCategur.Location = new Point(479, 314);
             txtCategur.Margin = new Padding(4, 3, 4, 3);
             txtCategur.Name = "txtCategur";
@@ -199,7 +199,7 @@
             Controls.Add(btnRedact);
             Controls.Add(btnDelete);
             Controls.Add(label1);
-            Controls.Add(listBox1);
+            Controls.Add(listBox);
             Name = "AdminNameForm";
             Text = "Список, режим: админ";
             ResumeLayout(false);
@@ -218,7 +218,7 @@
         private Button btnRedact;
         private Button btnDelete;
         private Label label1;
-        private ListBox listBox1;
+        private ListBox listBox;
         private TextBox txtCategur;
         private Label lblCategur;
     }

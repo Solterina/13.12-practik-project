@@ -21,10 +21,10 @@ namespace ПРОЕКТ
 
         private void ListFunder_Load(object sender, EventArgs e)
         {
-            ListBox.Items.Add("Id\tName\tSum\tCategoryId");
+            ListBox.Items.Add("Id\tName\t\tSum\t\tCategoryId");
             foreach (var i in db.FixedAssets)
             {
-                ListBox.Items.Add($"{i.Id}\t{i.Name}\t{i.Sum}\t{i.CategoryId}");
+                ListBox.Items.Add($"{i.Id}\t{i.Name}\t\t{i.Sum}\t\t{i.CategoryId}");
             }
         }
     }

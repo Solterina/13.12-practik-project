@@ -44,7 +44,7 @@
             // txtCategur
             // 
             txtCategur.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtCategur.ForeColor = SystemColors.ScrollBar;
+            txtCategur.ForeColor = SystemColors.MenuText;
             txtCategur.Location = new Point(479, 240);
             txtCategur.Margin = new Padding(4, 3, 4, 3);
             txtCategur.Name = "txtCategur";
@@ -54,7 +54,7 @@
             // txtName
             // 
             txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtName.ForeColor = SystemColors.ScrollBar;
+            txtName.ForeColor = SystemColors.MenuText;
             txtName.Location = new Point(479, 167);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";
@@ -152,7 +152,7 @@
             // txtSum
             // 
             txtSum.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtSum.ForeColor = SystemColors.ScrollBar;
+            txtSum.ForeColor = SystemColors.MenuText;
             txtSum.Location = new Point(479, 99);
             txtSum.Margin = new Padding(4, 3, 4, 3);
             txtSum.Name = "txtSum";

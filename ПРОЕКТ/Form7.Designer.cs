@@ -40,7 +40,7 @@
             // txtName
             // 
             txtName.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtName.ForeColor = SystemColors.ScrollBar;
+            txtName.ForeColor = Color.Black;
             txtName.Location = new Point(476, 99);
             txtName.Margin = new Padding(4, 3, 4, 3);
             txtName.Name = "txtName";

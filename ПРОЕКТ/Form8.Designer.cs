@@ -44,7 +44,7 @@
             // txtMeans
             // 
             txtMeans.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtMeans.ForeColor = SystemColors.ScrollBar;
+            txtMeans.ForeColor = SystemColors.MenuText;
             txtMeans.Location = new Point(474, 177);
             txtMeans.Margin = new Padding(4, 3, 4, 3);
             txtMeans.Name = "txtMeans";
@@ -54,7 +54,7 @@
             // txtDate
             // 
             txtDate.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtDate.ForeColor = SystemColors.ScrollBar;
+            txtDate.ForeColor = SystemColors.MenuText;
             txtDate.Location = new Point(474, 94);
             txtDate.Margin = new Padding(4, 3, 4, 3);
             txtDate.Name = "txtDate";
@@ -137,7 +137,7 @@
             // txtState
             // 
             txtState.Font = new Font("Microsoft Sans Serif", 18F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            txtState.ForeColor = SystemColors.ScrollBar;
+            txtState.ForeColor = SystemColors.MenuText;
             txtState.Location = new Point(474, 250);
             txtState.Margin = new Padding(4, 3, 4, 3);
             txtState.Name = "txtState";
