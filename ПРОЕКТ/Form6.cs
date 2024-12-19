@@ -41,5 +41,7 @@ public partial class AdminFunder : Form
         db.FixedAssets.Add(fixedAsset);
 
         db.SaveChanges();
+
+        listBox.Items.Add($"{fixedAsset.Id}\t{fixedAsset.Name}\t{fixedAsset.Sum}\t{fixedAsset.CategoryId}");
     }
 }
