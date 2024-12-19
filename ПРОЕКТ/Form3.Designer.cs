@@ -62,6 +62,7 @@
             Controls.Add(listBox);
             Name = "ListCategory";
             Text = "Список, режим: просмотра";
+            Load += ListCategory_Load;
             ResumeLayout(false);
         }
 

@@ -62,6 +62,7 @@
             Controls.Add(listBox);
             Name = "ListNameForm";
             Text = "Список, режим: просмотра";
+            Load += ListNameForm_Load;
             ResumeLayout(false);
         }
 
