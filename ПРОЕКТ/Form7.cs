@@ -1,13 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ПРОЕКТ;
 
@@ -25,10 +17,15 @@ public partial class ListCategoryForm : Form
         db.Categories.Load();
         listBox.DataSource = db.Categories.Local.ToBindingList();
     }
-
     private void btnAdd_Click(object sender, EventArgs e)
     {
         string name = txtName.Text;
+
+        if (string.IsNullOrEmpty(name))
+        {
+            MessageBox.Show("Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         var category = new Category(name);
 
@@ -45,7 +42,17 @@ public partial class ListCategoryForm : Form
     {
         string name = txtName.Text;
 
-        if (listBox.SelectedRows.Count == 0) return;
+        if (string.IsNullOrEmpty(name))
+        {
+            MessageBox.Show("Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        if (listBox.SelectedRows.Count == 0)
+        {
+            MessageBox.Show("Не выбрана строка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 
@@ -64,7 +71,11 @@ public partial class ListCategoryForm : Form
 
     private void btnDelete_Click(object sender, EventArgs e)
     {
-        if (listBox.SelectedRows.Count == 0) return;
+        if (listBox.SelectedRows.Count == 0)
+        {
+            MessageBox.Show("Не выбрана строка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 

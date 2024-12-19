@@ -1,13 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ПРОЕКТ;
 
@@ -32,10 +24,20 @@ public partial class AdminNameForm : Form
 
         string lastName = txtSurName.Text;
 
-        string post =txtTitle.Text;
+        string post = txtTitle.Text;
 
         int categoryId;
-        if (!int.TryParse(txtCategur.Text, out categoryId)) return;
+        if (!int.TryParse(txtCategur.Text, out categoryId))
+        {
+            MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(post))
+        {
+            MessageBox.Show("Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         var responsPerson = new ResponsPerson(firstName, lastName, post, categoryId);
 
@@ -57,9 +59,23 @@ public partial class AdminNameForm : Form
         string post = txtTitle.Text;
 
         int categoryId;
-        if (!int.TryParse(txtCategur.Text, out categoryId)) return;
+        if (!int.TryParse(txtCategur.Text, out categoryId))
+        {
+            MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
-        if (listBox.SelectedRows.Count == 0) return;
+        if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(post))
+        {
+            MessageBox.Show("Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        if (listBox.SelectedRows.Count == 0)
+        {
+            MessageBox.Show("Не выбрана строка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 
@@ -81,7 +97,11 @@ public partial class AdminNameForm : Form
 
     private void btnDelete_Click(object sender, EventArgs e)
     {
-        if (listBox.SelectedRows.Count == 0) return;
+        if (listBox.SelectedRows.Count == 0)
+        {
+            MessageBox.Show("Не выбрана строка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 

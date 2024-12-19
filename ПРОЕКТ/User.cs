@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ПРОЕКТ;
 
@@ -16,7 +15,7 @@ public class User
     public string Email { get; set; }
 
     [MaxLength(20)]
-    public string Phone {  get; set; }
+    public string Phone { get; set; }
 
     [MaxLength(50)]
     public string FirstName { get; set; }

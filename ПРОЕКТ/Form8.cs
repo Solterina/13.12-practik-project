@@ -1,14 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml.Linq;
 
 namespace ПРОЕКТ;
 
@@ -29,12 +20,27 @@ public partial class AdminLog : Form
 
     private void btnAdd_Click(object sender, EventArgs e)
     {
-        DateTime date = DateTime.Parse(txtDate.Text);
+        DateTime date;
+        if (!DateTime.TryParse(txtDate.Text, out date))
+        {
+            MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         string state = txtState.Text;
 
         int fixedAssetId;
-        if (!int.TryParse(txtMeans.Text, out fixedAssetId)) return;
+        if (!int.TryParse(txtMeans.Text, out fixedAssetId))
+        {
+            MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        if (string.IsNullOrEmpty(state))
+        {
+            MessageBox.Show("Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         var stateFixedAsset = new StateFixedAsset(date, fixedAssetId, state);
 
@@ -49,14 +55,33 @@ public partial class AdminLog : Form
 
     private void btnRedact_Click(object sender, EventArgs e)
     {
-        DateTime date = DateTime.Parse(txtDate.Text);
+        DateTime date;
+        if (!DateTime.TryParse(txtDate.Text, out date))
+        {
+            MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         string state = txtState.Text;
 
         int fixedAssetId;
-        if (!int.TryParse(txtMeans.Text, out fixedAssetId)) return;
+        if (!int.TryParse(txtMeans.Text, out fixedAssetId))
+        {
+            MessageBox.Show("Введены неверные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
-        if (listBox.SelectedRows.Count == 0) return;
+        if (string.IsNullOrEmpty(state))
+        {
+            MessageBox.Show("Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
+
+        if (listBox.SelectedRows.Count == 0)
+        {
+            MessageBox.Show("Не выбрана строка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 
@@ -77,7 +102,11 @@ public partial class AdminLog : Form
 
     private void btnDelete_Click(object sender, EventArgs e)
     {
-        if (listBox.SelectedRows.Count == 0) return;
+        if (listBox.SelectedRows.Count == 0)
+        {
+            MessageBox.Show("Не выбрана строка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 

@@ -1,13 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ПРОЕКТ
 {
@@ -17,7 +8,7 @@ namespace ПРОЕКТ
         public Register()
         {
             InitializeComponent();
-            db = new UserDbContext();         
+            db = new UserDbContext();
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -34,6 +25,18 @@ namespace ПРОЕКТ
             var phone = txtPhone.Text;
             var login = txtLogin.Text;
             var password = txtPassword.Text;
+
+            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (db.Users.Any(x => x.Username == login || x.Email == email || x.Phone == phone))
+            {
+                MessageBox.Show("Пользователь с такими данными уже зарегестрирован", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             var user = new User(login, password, email, phone, firstName, lastName);
 
@@ -55,9 +58,25 @@ namespace ПРОЕКТ
             var login = txtLogin.Text;
             var password = txtPassword.Text;
 
-            if (listBox.SelectedRows.Count == 0) return;
+            if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(phone) || string.IsNullOrEmpty(login) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(email))
+            {
+                MessageBox.Show("Не все поля заполнены", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (listBox.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Не выбрана строка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
+
+            if (db.Users.Any(x => x.Id != id && (x.Username == login || x.Email == email || x.Phone == phone)))
+            {
+                MessageBox.Show("Пользователь с такими данными уже зарегестрирован", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             var user = db.Users.First(x => x.Id == id);
 
@@ -79,7 +98,11 @@ namespace ПРОЕКТ
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (listBox.SelectedRows.Count == 0) return;
+            if (listBox.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Не выбрана строка", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             int id = int.Parse(listBox[0, listBox.SelectedRows[0].Index].Value.ToString());
 
@@ -90,6 +113,6 @@ namespace ПРОЕКТ
             db.Users.Load();
             listBox.DataSource = db.Users.Local.ToBindingList();
             listBox.Refresh();
-        }        
+        }
     }
 }
